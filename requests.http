@@ -19,3 +19,6 @@ Content-Type: application/json
   "email": "tester@tester.com",
   "password": "password"
 }
+
+### Services create
+POST http://localhost:3000/services
