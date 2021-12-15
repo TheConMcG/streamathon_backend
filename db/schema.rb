@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_225203) do
+ActiveRecord::Schema.define(version: 2021_12_10_205148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2021_11_28_225203) do
     t.string "name"
     t.string "region"
     t.integer "source_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tmdb_watchmodes", force: :cascade do |t|
+    t.integer "watchmode_id"
+    t.integer "tmdb_id"
+    t.string "tmdb_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,4 +1,4 @@
-@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzgyMjU3NjR9.DZ2ruWElHMfzC5k8r0AJa3s2KO4u0k3TY0VnJD2MZTs",
+@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Mzk0MTU2MDB9.zt1Qsf1heDiw5ArwpVmozt_zrvlkPhMcMLMS6grHUog",
 
 ### Users create (signup)
 POST http://localhost:3000/users.json
@@ -21,4 +21,40 @@ Content-Type: application/json
 }
 
 ### Services create
-POST http://localhost:3000/services
+POST http://localhost:3000/services.json
+Content-Type: application/json
+
+{
+  "name": "Hulu-test",
+  "region": "US",
+  "source_id": 157
+}
+
+### create join-table connection between user and their services
+POST http://localhost:3000/service_users.json
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "service_id": 2
+}
+
+### test-choices
+GET http://localhost:3000/choices.json
+
+
+### test-photos
+GET http://localhost:3000/photos/1.json
+Content-Type: application/json
+
+{
+  "tmdb_type": "movie",
+  "tmdb_id": 550
+}
+
+### test-urls
+GET http://localhost:3000/urls/1.json
+Content-Type: application/json
+
+### test-sources
+GET http://localhost:3000/sources.json

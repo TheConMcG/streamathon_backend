@@ -1,0 +1,2 @@
+class TmdbWatchmode < ApplicationRecord
+end
