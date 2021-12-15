@@ -36,5 +36,5 @@ class ChoicesController < ApplicationController
     end
     render json: choice_data
   end
-
+  
 end

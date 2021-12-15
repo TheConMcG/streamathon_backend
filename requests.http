@@ -41,20 +41,3 @@ Content-Type: application/json
 
 ### test-choices
 GET http://localhost:3000/choices.json
-
-
-### test-photos
-GET http://localhost:3000/photos/1.json
-Content-Type: application/json
-
-{
-  "tmdb_type": "movie",
-  "tmdb_id": 550
-}
-
-### test-urls
-GET http://localhost:3000/urls/1.json
-Content-Type: application/json
-
-### test-sources
-GET http://localhost:3000/sources.json

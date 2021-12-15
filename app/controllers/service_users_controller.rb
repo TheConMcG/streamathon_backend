@@ -5,7 +5,7 @@ class ServiceUsersController < ApplicationController
     i = 0
     while i < service_ids.length
       service = Service.find_by(source_id: params[:service_ids][i])
-      service_users = ServiceUsers.new(
+      service_users = ServiceUser.new(
         service_id: service.id,
         user_id: current_user.id
       )
