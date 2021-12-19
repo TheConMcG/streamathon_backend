@@ -12,7 +12,7 @@ class ChoicesController < ApplicationController
     end
     source_ids = source_array.join(",")
     page = rand((1...20))
-    response = HTTP.get("https://api.watchmode.com/v1/list-titles/?apiKey=#{Rails.application.credentials.watchmode_api_key}&source_ids=#{source_ids}&genres=comedy&page=#{page}&limit=5").parse(:json)
+    response = HTTP.get("https://api.watchmode.com/v1/list-titles/?apiKey=#{Rails.application.credentials.watchmode_api_key}&source_ids=#{source_ids}&genres=comedy&page=#{page}&limit=3").parse(:json)
     response['titles'].each do |choice|
       tmdb_type = choice['tmdb_type']
       tmdb_id = choice['tmdb_id']
@@ -36,5 +36,5 @@ class ChoicesController < ApplicationController
     end
     render json: choice_data
   end
-  
+
 end
