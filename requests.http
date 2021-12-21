@@ -41,3 +41,10 @@ Content-Type: application/json
 
 ### test-choices
 GET http://localhost:3000/choices.json
+Content-Type: application/json
+
+{
+  "genre": 4,
+  "limit": 1,
+  "tmdb_type": "movie"
+}

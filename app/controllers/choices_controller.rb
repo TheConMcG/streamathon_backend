@@ -5,6 +5,9 @@ class ChoicesController < ApplicationController
     source_array = []
     choice_data = []
     urls = []
+    genre = params[:genre] || 3
+    limit = params[:limit] || 10
+    type = params[:tmdb_type] || "movie"
     while i < current_user.service_users.length
       source_id = Service.find(current_user.service_users[i].service_id).source_id
       i += 1
@@ -12,7 +15,7 @@ class ChoicesController < ApplicationController
     end
     source_ids = source_array.join(",")
     page = rand((1...20))
-    response = HTTP.get("https://api.watchmode.com/v1/list-titles/?apiKey=#{Rails.application.credentials.watchmode_api_key}&source_ids=#{source_ids}&genres=comedy&page=#{page}&limit=3").parse(:json)
+    response = HTTP.get("https://api.watchmode.com/v1/list-titles/?apiKey=#{Rails.application.credentials.watchmode_api_key}&types=#{type}&source_ids=#{source_ids}&genres=#{genre}&page=#{page}&limit=#{limit}").parse(:json)
     response['titles'].each do |choice|
       tmdb_type = choice['tmdb_type']
       tmdb_id = choice['tmdb_id']
